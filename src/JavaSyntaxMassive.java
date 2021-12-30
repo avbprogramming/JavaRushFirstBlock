@@ -19,6 +19,18 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class JavaSyntaxMassive {
+    public static void main(String[] args) {
+
+    }
+
+}
+
+
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+/*
+    Треугольный массив
+
+
     public static int[][] result = new int[10][];
     public static void main(String[] args) {
         for (int i = 0; i < result.length; i++){
@@ -32,7 +44,7 @@ public class JavaSyntaxMassive {
 
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[i].length; j++) {
-                System.out.print(result[i][j]);
+                System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
