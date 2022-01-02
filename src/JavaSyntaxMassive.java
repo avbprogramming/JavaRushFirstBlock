@@ -1,3 +1,4 @@
+import java.awt.image.AreaAveragingScaleFilter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +25,10 @@ public class JavaSyntaxMassive {
     public static int[] ints = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        String str1 = Arrays.toString(strings);
+        String str2 = Arrays.toString(ints);
+        System.out.println(str1);
+        System.out.println(str2);
     }
 }
 
