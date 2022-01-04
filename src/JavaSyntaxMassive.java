@@ -21,6 +21,126 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class JavaSyntaxMassive {
 
+
+    public static void main(String[] args) {
+        int[] A = new int[100];
+        Arrays.fill(A, 50);
+        System.out.println(A[99]);
+    }
+
+
+
+
+}
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+/*
+//    Есть ли кто?
+
+//    Реализуй метод main(String[]), который выводит в консоль true, если элемент
+//    содержится в переданном массиве, иначе — false.
+//    Массив array не должен изменять расположение своих элементов.
+//
+//    Для поиска элемента в массиве нужен бинарный поиск.
+//    Чтобы это сделать, используй статический метод Arrays.binarySearch(int[], int) класса Arrays.
+//    Первым параметром нужно передать отсортированный массив, в котором выполнить поиск,
+//    вторым параметром — искомый элемент. Метод Arrays.binarySearch(int[], int) возвращает индекс искомого элемента,
+//    если такой элемент есть в массиве.
+
+//    Для сортировки массива можно использовать метод Arrays.sort(int[]).
+//    При тестировании значения переменных класса Solution будут разными.
+
+    public static int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+    public static int element = 9;
+
+    public static void main(String[] args) {
+        int[] copyArray = Arrays.copyOf(array, array.length);
+        Arrays.sort(copyArray); // зачем тут сортирвка массива?
+        int index = Arrays.binarySearch(copyArray, element);
+        System.out.println(index >=0);
+    }
+}
+
+
+
+
+
+
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+/*
+//    Делим массив
+//    Реализуй метод main(String[]), который делит массив array на два подмассива
+//    и заполняет ими двумерный массив result. Если длина массива нечетная,
+//    то большую часть нужно скопировать в первый подмассив.
+//    Для разделения массива используй метод Arrays.copyOfRange(int[], int, int).
+//    Порядок элементов не меняй.
+//    При тестировании значения полей класса Solution будут разными, учти это.
+
+    public static int[][] result = new int[2][];
+    public static int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+
+    public static void main(String[] args) {
+        if(array.length % 2 == 0) {
+            result[0] = Arrays.copyOfRange(array, 0, array.length / 2);
+            result[1] = Arrays.copyOfRange(array, array.length / 2, array.length);
+        }
+        else{
+            result[0] = Arrays.copyOfRange(array, 0, ((array.length / 2) + 1 ));
+            result[1] = Arrays.copyOfRange(array, ((array.length / 2) + 1 ), array.length);
+        }
+                System.out.println(Arrays.deepToString(result));
+    }
+}
+
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+/*
+    // Заполняем массив
+    public static int[] array = new int[20];
+    public static int valueStart = 10;
+    public static int valueEnd = 13;
+
+    public static void main(String[] args) {
+        if(array.length % 2 == 0) {
+            Arrays.fill(array, 0, ((array.length / 2) + 1), valueStart);
+            Arrays.fill(array, ((array.length / 2)), (array.length), valueEnd);
+        }else{
+            Arrays.fill(array, 0, ((array.length / 2) + 1), valueStart);
+            Arrays.fill(array, ((array.length / 2)+1), (array.length), valueEnd);
+        }
+
+        System.out.println(Arrays.toString(array));
+    }
+}
+
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+/*
+//Сравнение двумерных массивов
+
+    public static int[][] arrayFirst = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+    public static int[][] arraySecond = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.deepEquals(arrayFirst, arraySecond));
+       // System.out.println(arrayFirst == arraySecond);
+    }
+}
+
+
+
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+    /*
+//    Выводим двумерные массивы
+    public static String[][] strings = new String[][]{{"🙂", "🙂", "🙂", "🙂"}, {"🙃", "🙃", "🙃", "🙃"}, {"😋", "😋", "😋", "😋"}, {"😎", "😎", "😎", "😎"}};
+    public static int[][] ints = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+    public static void main(String[] args) {
+        String str1 = Arrays.deepToString(strings);
+        String str2 = Arrays.deepToString(ints);
+        System.out.println(str1);
+        System.out.println(str2);
+    }
+}
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+    /*
+//Выводим массивы
     public static String[] strings = new String[]{"I", "love", "Java"};
     public static int[] ints = new int[]{1, 2, 3, 4, 5, 6, 7, 8};
 
@@ -33,9 +153,9 @@ public class JavaSyntaxMassive {
 }
 
 
-
+//Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
     /*
-    //Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush Java Rush
+
 //Создаем мультимассив
     public static int[][][] multiArray = new int[][][]{{{4, 8, 15}, {16}}, {{23, 42}, {}}, {{1}, {2}, {3}, {4, 5}}};
     public static void main(String[] args) {
