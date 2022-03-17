@@ -1,0 +1,57 @@
+/*
+В словарь (Map<String, Date>) занести десять записей по принципу:
+«фамилия» - «дата рождения».
+Удалить из словаря всех людей, родившихся летом.
+Требования:
+
+    • Программа не должна выводить текст на экран.
+    • Программа не должна считывать значения с клавиатуры.
+    • Метод createMap() должен создавать и возвращать словарь HashMap с типом элементов String, Date состоящий из 10 записей.
+    • Метод removeAllSummerPeople() должен удалять из словаря всех людей, родившихся летом.
+
+*/
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+/* 
+Удалить всех людей, родившихся летом
+*/
+
+public class Solution {
+    public static Map<String, Date> createMap() throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("MMMMM d yyyy", Locale.ENGLISH);
+        Map<String, Date> map = new HashMap<>();
+        map.put("Сталлоне", dateFormat.parse("MAY 1 2012"));
+        //напишите тут ваш код
+        map.put("2", dateFormat.parse("MAY 1 2012"));
+        map.put("3", dateFormat.parse("JUNE 1 2000"));
+        map.put("4", dateFormat.parse("SEPTEMBER 1 2002"));
+        map.put("5", dateFormat.parse("JULY 1 2003"));
+        map.put("6", dateFormat.parse("MAY 5 1985"));
+        map.put("7", dateFormat.parse("OCTOBER 1 2012"));
+        map.put("8", dateFormat.parse("AUGUST 1 2012"));
+        map.put("9", dateFormat.parse("MARCH 1 2012"));
+        map.put("10", dateFormat.parse("JULY 1 2012"));
+
+        return map;
+    }
+
+    public static void removeAllSummerPeople(Map<String, Date> map) {
+        //напишите тут ваш код
+  GregorianCalendar calendar = new GregorianCalendar();
+  for(Iterator<Map.Entry<String, Date>> iterator = map.entrySet().iterator(); iterator.hasNext();){
+      Map.Entry<String, Date> entry = iterator.next();
+      calendar.setTime(entry.getValue());
+      if (calendar.get(Calendar.MONTH) > 4 && calendar.get(Calendar.MONTH) < 8){
+          iterator.remove();
+      }
+  }
+    }
+
+    public static void main(String[] args) {
+        // Map map = createMap();
+        // System.out.println(removeAllSummerPeople());
+    }
+}
